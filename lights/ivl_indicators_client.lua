@@ -26,8 +26,9 @@ local INDICATORS_LIGHTS = {
 	})
 }
 
-local FREQUENCY_BASE = 1.4  -- [1,2] Hz
-local FREQUENCY_DELTA = 0.2
+-- https://en.wikipedia.org/wiki/Automotive_lighting#Electrical_connection_and_switching
+-- "Turn signals are required to blink on and off, or "flash", at a steady rate of between 60 and 120 pulses per minute (1–2 Hz)"
+local FREQUENCY_BASE = 1.5
 
 function IVL.updateIndicators(vehicle)
 

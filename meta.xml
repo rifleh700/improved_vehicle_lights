@@ -29,6 +29,7 @@
     <script src="lights/ivl_park_client.lua"			type="client" />
     <script src="lights/ivl_park_server.lua"			type="server" />
 
+    <script src="ivl_binds_client.lua"					type="client" />
     <script src="ivl_binds_server.lua"					type="server" />
 
 </meta>
