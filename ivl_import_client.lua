@@ -44,4 +44,4 @@ function import(resourceName, defineSpace, spaceName)
 	return true
 end
 
-import("cvl")
+import("custom_vehicle_lights")
