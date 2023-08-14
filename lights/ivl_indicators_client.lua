@@ -1,29 +1,21 @@
 
 local INDICATORS_LIGHTS = {
-	getVehicleCustomLightsFromNames({
+	{
 		"indicatorf_l",
-		"indicatorm_l",
 		"indicatorr_l",
 		"indicator_l"
-	}),
-
-	getVehicleCustomLightsFromNames({
+	}, {
 		"indicatorf_r",
-		"indicatorm_r",
 		"indicatorr_r",
 		"indicator_r"
-	}),
-
-	getVehicleCustomLightsFromNames({
+	}, {
 		"indicatorf_l",
-		"indicatorm_l",
 		"indicatorr_l",
 		"indicator_l",
 		"indicatorf_r",
-		"indicatorm_r",
 		"indicatorr_r",
 		"indicator_r"
-	})
+	}
 }
 
 -- https://en.wikipedia.org/wiki/Automotive_lighting#Electrical_connection_and_switching
@@ -55,13 +47,11 @@ addEventHandler("ivl.data", root,
 )
 
 function getVehicleIndicatorLightsState(vehicle)
-	if not scheck("u:element:vehicle") then return false end
 
 	return IVL.getData(vehicle, "indicators.state")
 end
 
 function setVehicleIndicatorLightsState(vehicle, state)
-	if not scheck("u:element:vehicle,n") then return false end
 
 	state = math.min(math.max(math.floor(state), 0), 3)
 	

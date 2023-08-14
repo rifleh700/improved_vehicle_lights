@@ -1,15 +1,13 @@
 
-local HEAD_LIGHTS = getVehicleCustomLightsFromNames({
+local HEAD_LIGHTS = {
 	"head_l",
-	"head_r",
-	"head"
-})
+	"head_r"
+}
 
-local TAIL_LIGHTS = getVehicleCustomLightsFromNames({
+local TAIL_LIGHTS = {
 	"tail_l",
-	"tail_r",
-	"tail"
-})
+	"tail_r"
+}
 
 function IVL.updateHead(vehicle)
 
@@ -55,13 +53,11 @@ addEventHandler("ivl.onDataChanged", root,
 )
 
 function getVehicleHeadLightsState(vehicle)
-	if not scheck("u:element:vehicle") then return false end
 
 	return IVL.getData(vehicle, "head")
 end
 
 function setVehicleHeadLightsState(vehicle, state)
-	if not scheck("u:element:vehicle,b") then return false end
 
 	return IVL.setData(vehicle, "head", state)
 end

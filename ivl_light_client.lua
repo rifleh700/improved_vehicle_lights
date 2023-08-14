@@ -3,10 +3,10 @@ local UP_SPEED = 0.25
 local DOWN_SPEED = 0.15
 
 local _setVehicleCustomLightPower = setVehicleCustomLightPower
-function setVehicleCustomLightPower(vehicle, lightID, power)
+function setVehicleCustomLightPower(vehicle, name, power)
 	
 	local powerData = IVL.getData(vehicle, "power") or {}
-	powerData[lightID] = power
+	powerData[name] = power
 
 	return IVL.setData(vehicle, "power", powerData)
 end
@@ -16,8 +16,8 @@ addEventHandler("onClientPreRender", root,
 		
 		for _, vehicle in ipairs(getElementsByType("vehicle", root, true)) do
 			if not isVehicleBlown(vehicle) then
-				for lightID, target in pairs(IVL.getData(vehicle, "power") or {}) do
-					local current = getVehicleCustomLightPower(vehicle, lightID)
+				for name, target in pairs(IVL.getData(vehicle, "power") or {}) do
+					local current = getVehicleCustomLightPower(vehicle, name)
 					if target ~= current then
 						local power = current
 						if target > current then
@@ -25,7 +25,7 @@ addEventHandler("onClientPreRender", root,
 						else
 							power = power - DOWN_SPEED
 						end
-						_setVehicleCustomLightPower(vehicle, lightID, power)
+						_setVehicleCustomLightPower(vehicle, name, power)
 					end
 				end
 			end
@@ -33,3 +33,4 @@ addEventHandler("onClientPreRender", root,
 
 	end
 )
+

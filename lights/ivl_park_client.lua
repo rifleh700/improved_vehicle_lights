@@ -1,17 +1,13 @@
 
-local PARK_LIGHTS = getVehicleCustomLightsFromNames({
+local PARK_LIGHTS = {
 	"parkf_l",
 	"parkf_r",
-	"park_l",
-	"park_r",
-	"park"
-})
+}
 
-local TAIL_LIGHTS = getVehicleCustomLightsFromNames({
+local TAIL_LIGHTS = {
 	"tail_l",
 	"tail_r",
-	"tail",
-})
+}
 
 function IVL.updatePark(vehicle)
 
@@ -54,13 +50,11 @@ addEventHandler("ivl.onDataChanged", root,
 )
 
 function getVehicleParkLightsState(vehicle)
-	if not scheck("u:element:vehicle") then return false end
 
 	return IVL.getData(vehicle, "park")
 end
 
 function setVehicleParkLightsState(vehicle, state)
-	if not scheck("u:element:vehicle,b") then return false end
 
 	return IVL.setData(vehicle, "park", state)
 end

@@ -2,7 +2,7 @@
 
 	<info
 		author="rifleh700"
-		version="1.0.0"
+		version="2.0.0"
 		name="improved_vehicle_lights"
 		description="Improved vehicle lights system"
 		type="script"
@@ -10,17 +10,13 @@
 
 	<include resource="custom_vehicle_lights" />
 
-	<script src="check.lua"								type="shared" />
-
     <script src="ivl_main_server.lua"					type="server" />
     <script src="ivl_data_server.lua"					type="server" />
-
     <script src="ivl_import_client.lua"					type="client" />
     <script src="ivl_helper_client.lua"					type="client" />
     <script src="ivl_main_client.lua"					type="client" />
     <script src="ivl_data_client.lua"					type="client" />
     <script src="ivl_light_client.lua"					type="client" />
-
     <script src="lights/ivl_head_client.lua"			type="client" />
     <script src="lights/ivl_head_server.lua"			type="server" />
     <script src="lights/ivl_indicators_client.lua"		type="client" />
@@ -28,8 +24,14 @@
     <script src="lights/ivl_brakereverse_client.lua"	type="client" />
     <script src="lights/ivl_park_client.lua"			type="client" />
     <script src="lights/ivl_park_server.lua"			type="server" />
-
     <script src="ivl_binds_client.lua"					type="client" />
     <script src="ivl_binds_server.lua"					type="server" />
+
+	<export function="getVehicleHeadLightsState"		type="shared" />
+	<export function="setVehicleHeadLightsState"		type="shared" />
+	<export function="getVehicleIndicatorLightsState"	type="shared" />
+	<export function="setVehicleIndicatorLightsState"	type="shared" />
+	<export function="getVehicleParkLightsState"		type="shared" />
+	<export function="setVehicleParkLightsState"		type="shared" />
 
 </meta>
