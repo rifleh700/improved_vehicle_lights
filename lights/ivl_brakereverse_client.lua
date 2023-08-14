@@ -1,15 +1,13 @@
 
-local BRAKE_LIGHTS = getVehicleCustomLightsFromNames({
+local BRAKE_LIGHTS = {
 	"brake_l",
-	"brake_r",
-	"brake"
-})
+	"brake_r"
+}
 
-local REVERSE_LIGHTS = getVehicleCustomLightsFromNames({
+local REVERSE_LIGHTS = {
 	"reverse_l",
-	"reverse_r",
-	"reverse",
-})
+	"reverse_r"
+}
 
 function IVL.disableBrakeReverse(vehicle)
 	
@@ -65,7 +63,6 @@ addEventHandler("onClientVehicleStartExit", root,
 		if seat ~= 0 then return end
 
 		IVL.disableBrakeReverse(source)
-
 	end
 )
 
@@ -74,16 +71,5 @@ addEventHandler("onClientVehicleExit", root,
 		if seat ~= 0 then return end
 
 		IVL.disableBrakeReverse(source)
-
 	end
 )
-
-function getVehicleBrakeLightsState(vehicle)
-	
-	return IVL.getData(source, "brake")
-end
-
-function getVehicleReverseLightsState(vehicle)
-	
-	return IVL.getData(source, "reverse")
-end
